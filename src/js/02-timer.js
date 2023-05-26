@@ -36,7 +36,7 @@ refs.startBtn.disabled = true;
 refs.startBtn.addEventListener('click', onCountdown);
 
 function onCountdown() {
-  const {dateInput, daysCounter, hoursCounter, minutesCounter, secondsCounter} = refs;
+  const {dateInput} = refs;
   
   timerId = setInterval(() => {
     if (dateInput.selectedDates[0] - Date.now() <= 0) {
@@ -51,7 +51,7 @@ function onCountdown() {
 };
 
 function addLeadingZero(value) {
-  const {dateInput, daysCounter, hoursCounter, minutesCounter, secondsCounter} = refs;
+  const {daysCounter, hoursCounter, minutesCounter, secondsCounter} = refs;
   const {days, hours, minutes, seconds} = value;
 
   daysCounter.textContent = String(days).padStart(2, "0");
