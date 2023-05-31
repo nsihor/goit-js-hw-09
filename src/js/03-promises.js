@@ -18,6 +18,10 @@ function onFormSubmit(event) {
 }
 
 function createPromises(firstDelay, delayStep, amount) {
+  if (firstDelay < 0 || delayStep < 0 || amount <= 0) {
+    Notiflix.Notify.failure('Please fill correct data');
+    return;
+  }
   for (let i = 1; i <= amount; i++) {
     createPromise(i, firstDelay)
       .then(({ position, delay }) => {

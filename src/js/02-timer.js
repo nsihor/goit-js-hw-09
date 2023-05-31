@@ -13,7 +13,6 @@ const options = {
       startBtn.disabled = true;
 
       Notiflix.Notify.failure('Please choose a date in the future');
-      // alert('Please choose a date in the future');
     };
     if (selectedDates[0] > Date.now()) {
       startBtn.disabled = false;
@@ -47,6 +46,8 @@ function onCountdown() {
     const date = convertMs(dateInput.selectedDates[0] - Date.now());
 
     addLeadingZero(date)
+
+    dateInput.input.disabled = true;
   }, 1000)
 };
 
